@@ -1,0 +1,157 @@
+<html>
+<head>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+
+    <style>
+        body {
+            background: linear-gradient(135deg, #f06, #4a90e2, #7d50a0);
+            background-size: 200% 200%;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            animation: backgroundAnimation 10s infinite alternate;
+        }
+        .container {
+            text-align: center;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1s ease-in-out;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        h1
+         {
+            font-size: 64px;
+            color: #ffffff;
+            margin-bottom: 30px;
+            letter-spacing: 2px;
+            animation: pulse 1.5s infinite;
+        }
+        button {
+            font-size: 20px;
+            padding: 15px 25px;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            animation: float 2s ease-in-out infinite;
+        }
+        button:hover {
+            opacity: 0.9;
+            transform: translateY(-5px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        }
+        button:active {
+            transform: translateY(1px);
+            box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+        }
+        .start-btn {
+            background-color: #4caf50;
+            color: white;
+        }
+        .pause-btn {
+            background-color: #e91e63;
+            color: white;
+        }
+        .reset-btn {
+            background-color: #3f51b5;
+            color: white;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes backgroundAnimation {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+    </style>
+</head> 
+<body>
+    <div  class="container">  <h1>STOP WATCH</h1>
+  
+        <h1><span id="s3">00</span>:<span id="s2">00</span>:<span id="s1">00</span></h1>
+        <button class="start-btn" onclick="start(event)"><ion-icon width="50%",height="200%" name="play-circle-outline"></ion-icon ></button>
+        <button class="pause-btn" onclick="xyz(event)"><ion-icon name="stop-circle-outline"></ion-icon></button>
+        <button class="reset-btn" onclick="abv(event)"><ion-icon name="refresh-outline"></ion-icon></button>
+    </div>
+    <script>
+        var z = null;
+        var a = 0;
+        var b = 0;
+        var g = 0;
+        document.getElementById("s1").innerHTML = formatTime(a);
+        document.getElementById("s2").innerHTML = formatTime(b);
+        document.getElementById("s3").innerHTML = formatTime(g);
+
+        function start(s) {
+            if (z !== null) return; 
+            z = setInterval(() => {
+                a++;
+                if (a == 60) {
+                    a = 0;
+                    b++;
+                    if (b == 60) {
+                        b = 0;
+                        g++;
+                        document.getElementById("s3").innerHTML = formatTime(g);
+                    }
+                    document.getElementById("s2").innerHTML = formatTime(b);
+                }
+                document.getElementById("s1").innerHTML = formatTime(a);
+            }, 100); 
+        }
+
+        function xyz() {
+            clearInterval(z);
+            z = null;
+        }
+
+        function abv() {
+            a = 0;
+            b = 0;
+            g = 0;
+            document.getElementById("s1").innerHTML = formatTime(a);
+            document.getElementById("s2").innerHTML = formatTime(b);
+            document.getElementById("s3").innerHTML = formatTime(g);
+            clearInterval(z);
+            z = null;
+        }
+
+        function formatTime(num) {
+            return num < 10 ? "0" + num : num;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+      
+    </head>
+    <body>
+        <div id="d1"></div>
+        <script type="text/babel">
+            function abc(ev){
+                console.log(ev)
+            }
+            var jsh1=<div style={{border:"1px solid",height:"200",width:"200px"}} onClick={abc}>click here to see</div>
+            ReactDOM.render(jsh1,document.getElementById("d1"))
+        </script>
+    </body>
+</html>

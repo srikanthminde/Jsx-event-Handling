@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+      
+    </head>
+    <body>
+        <div id="root"></div>
+        <script type="text/babel">
+            function abc(ev){
+                count=count-1
+                document.getElementById("d1").innerHTML=count-1
+            }
+                var count=0
+        
+            var jsh1=<div>
+                
+                <button onClick={abc}>Decrement</button>
+                <h1 id="d1"></h1>
+                </div>
+                ReactDOM.render(jsh1,document.getElementById("root"))
+        </script>
+    </body>
+</html>

@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+      
+    </head>
+    <body>
+        <div id="root"></div>
+        
+        <script  type="text/babel">
+            function abc(x,i){
+                document.getElementById("d1").innerHTML = `${x} is at index ${i}`
+            }
+           var ar=["praveen","sunitha","ramu","laxman","srinu","srikanth"]
+         
+                var jsh1=<div>
+                    {
+                        ar.map((x,s)=>{
+                            {s.firstname}
+                            return <li>{x}<button onClick={()=>{abc(x,s)}}>see</button></li>
+                        })
+                    }
+                    <h1 id="d1"></h1>
+                  </div>
+        
+            ReactDOM.render(jsh1,document.getElementById("root"))
+        </script>
+    </body>
+ </html> 
+ 
+ 

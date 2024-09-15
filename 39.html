@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+      <body>
+        <div id="root"></div>
+        <script type="text/babel">
+            function abc(ev){
+                count=count+1
+                document.getElementById("d1").innerHTML=count
+            }
+            function xyz(ev){
+                count=count-1
+                document.getElementById("d1").innerHTML=count
+            }
+            function pqr(){
+                document.getElementById("d1").innerHTML=120
+            }
+            
+          var  count=120
+            var jsh1=<div>
+                <button onClick={abc}>Increment</button>
+                <button onClick={xyz}>Decrement</button>
+                <button id="d2" onClick={pqr}>Reset</button>
+                <h1 id="d1"></h1>
+                <h1 id="d2"></h1>
+                
+                </div>
+                ReactDOM.render(jsh1,document.getElementById("root"))
+        </script>
+      </body>
+    </head>
+</html>

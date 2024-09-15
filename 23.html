@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+      
+    </head>
+    <body>
+        <div id="root"></div>
+        <script type="text/babel">
+            
+            var ar=[]
+            function sub(ev){
+                if(ev.target.checked===true){
+                    ar.push(ev.target.value)
+                }
+                else{
+                    ar=ar.filter((a)=>{
+                        if(a==ev.target.value){
+                            return false 
+                        }
+                        else{
+                            return true 
+                        }
+                    })
+                }
+                document.getElementById("d4").innerHTML=ar
+            }     
+            
+            var jsh1=<div>
+             
+                <input type="checkbox" name="corse" value="ReactJS" onChange={sub}/>ReactJS<br/>
+                <input type="checkbox" name="corse" value="Angular" onChange={sub}/>Angular<br/>
+                <input type="checkbox" name="corse" value="NodeJS" onChange={sub}/>NodeJS<br/>
+                <input type="checkbox" name="corse" value="MangoDb" onChange={sub}/>MangoDb<br/>
+                <input type="checkbox" name="corse" value="Python" onChange={sub}/>Python<br/>
+                <input type="checkbox" name="corse" value="JAva" onChange={sub}/>Java<br/>
+                <input type="checkbox" name="corse" value="C+" onChange={sub}/>c+<br/>
+            
+
+                <h1 id="d4"></h1>
+                
+                </div>
+                ReactDOM.render(jsh1,document.getElementById("root"))
+        </script>
+    </body>
+</html>

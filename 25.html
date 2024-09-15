@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+      
+    </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+        function abc (ev){
+            document.getElementById("d4").innerHTML=ev
+        }
+        var jsh1=<div>
+            <button onClick={()=>{abc(1)}}>button1</button>
+            <button onClick={()=>{abc(100)}}>button2</button>
+            <button onClick={()=>{abc(200)}}> button3</button>
+            <button onClick={()=>{abc(9000)}}>button 4</button>
+           
+            <h1 id="d4"></h1>
+            </div>
+            ReactDOM.render(jsh1,document.getElementById("root"))
+    </script>
+  </body>
+    
+</html>

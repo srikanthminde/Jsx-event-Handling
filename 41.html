@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+         <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+    <body>
+        <div id="root"></div>
+        <script type="text/babel">
+          var  ar=[]
+            function abc(){
+              var a=  document.getElementById("d2").value
+               ar.push(a)
+                document.getElementById("d8").innerHTML=ar
+            }
+            var jsh1=<div>
+                
+                
+                <input id="d2" type="text"/>
+                <button id="d1" onClick={abc}>Click to push</button>
+                <h1 id="d8"></h1>
+                </div>
+            
+                ReactDOM.render(jsh1,document.getElementById("root"))
+        </script>
+    </body>
+</html>
