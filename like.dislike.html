@@ -1,0 +1,33 @@
+<html></html>
+  <head>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    
+   
+    <div id="d3"></div>
+
+    <script type="text/babel">
+      var likes=0;
+      var dislikes=0
+      function like(){
+        likes++;
+        document.getElementById('likes').innerHTML=likes;
+      }
+      function dislike(){
+        dislikes++;
+        document.getElementById('dislikes').innerHTML=dislikes;
+      }
+      
+      var jh1 = <div>
+                  <button onClick={like}>Like</button><span id='likes'></span>&nbsp;&nbsp;&nbsp;&nbsp;
+                  <button onClick={dislike}>Disike</button><span id='dislikes'></span>
+                </div>
+      ReactDOM.render(jh1,document.getElementById("d3"))
+
+
+    </script>
+  </body>
+</html>
